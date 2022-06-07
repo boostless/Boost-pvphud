@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/tailwind.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <script src="app.js" type="text/javascript"></script>
+    <title>3sidesrw-hud</title>
+    <style>
+        ::-webkit-scrollbar {
+    display: none;
+    }
+    
+    </style>
+</head>
+<body class='flex h-screen w-screen' x-data="main()" x-init="listen()" x-show='show'>
+    <div class='main flex flex-col items-end justify-start w-screen my-3'>      
+       <div class="info text-white flex flex-row items-center space-x-4 mb-3 mx-10">
+          <!-- Add your server image here -->
+          <img class="w-auto h-6" src="">
+       </div>
+       <div class="hud bg-black bg-opacity-75 text-white px-8 p-4 rounded-l-xl flex flex-col space-y-3">
+         <div class="stats flex space-x-3">
+            <div class="kill border-red-500 border-2 px-3 p-1 rounded-3xl flex flex-row items-center space-x-2">
+              <i class="fas fa-skull"></i>
+              <span x-text="deaths">123</span>
+            </div>
+            <div class="kill border-blue-500 border-2 px-3 p-1 rounded-3xl flex flex-row items-center space-x-2">
+              <i class="fas fa-gun"></i>
+              <span x-text="kills">123</span>
+            </div>
+            <div class="kill border-yellow-500 border-2 px-3 p-1 rounded-3xl flex flex-row items-center space-x-2">
+              <i class="fas fa-arrow-trend-up"></i>
+              <span><span x-text="kd"></span> K/D</span>
+            </div>
+         </div>
+         <div class="level text-sm">
+          <div class="bar w-full h-2 bg-opacity-20 rounded-xl overflow-hidden mb-3" style="background-color: rgb(61, 61, 61)">
+            <div class="bg-blue-500 h-full" :style="{width:levelW + '%'}"></div>
+          </div>
+          <p style="float: left;">LEVEL: <span x-text="level"></span></p>
+          <p style="float: right;">XP: <span x-text="xp"></span>/<span x-text="nextXp"></span></p>
+         </div>
+       </div>
+       <div class="money text-right text-white font-semibold text-2xl my-2 flex items-center space-x-3 mx-10">
+          <span x-text="money">100000</span>
+          <span class="flex items-center justify-center rounded-full bg-gray-500 bg-opacity-75 w-8 h-8">
+            <i class="font-semibold fas fa-dollar-sign text-black"></i>
+          </span>   
+        </div>
+    </div>
+</body>
+</html>
