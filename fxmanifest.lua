@@ -5,7 +5,7 @@ author 'Boost#4383'
 description 'Boost`s 3sides-rwhud'
 version '1.0.0'
 
-shared_script '@es_extened/imports.lua'
+shared_script '@es_extended/imports.lua'
 
 client_scripts{
     'client/*.lua'
